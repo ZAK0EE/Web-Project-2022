@@ -28,7 +28,7 @@
             background: white;
             margin: 0;
             width: 100%;
-            box-shadow: 0 8px 18px 5px rgb(0 0 0 / 7%);
+            box-shadow: 0px 5px 15px 1px rgb(0 0 0 / 7%);
         }
 
         .nav {
@@ -45,7 +45,7 @@
         }
 
         .brand-logo {
-            width: 40%;
+            width: 35%;
         }
 
         .nav-items {
@@ -63,7 +63,7 @@
         .search-box {
             float: right;
             width: 70%;
-            padding: 2%;
+            padding: 1%;
             border-top-left-radius: 10px;
             border-bottom-left-radius: 10px;
             border: 2px solid #ea1b25;
@@ -74,7 +74,7 @@
         .search-btn {
             float: right;
             width: 20%;
-            padding: 2%;
+            padding: 1%;
             cursor: pointer;
             background: #ea1b25;
             color: white;
@@ -393,8 +393,8 @@
             font-weight: 700;
         }
 
-        .mt-100 {
-            margin-top: 100px
+        .mt-30 {
+            margin-top: 30px
         }
 
         .card {
