@@ -22,7 +22,15 @@ ArduStroe is an electronic store that offers high-quality items with affordable 
 	
 ## Database:
 	Note Transaction conflict
+# => don't forget migrate the database
+
 ## Index,Search screenshot:
 
-<img height="720" src="seach,index.png" width="540"/>
+![](seach,index.png)
 
+
+## profile, login, register pages screenshot:
+
+![](profile.png)
+![](login_page.png)
+![](register_page.png)
