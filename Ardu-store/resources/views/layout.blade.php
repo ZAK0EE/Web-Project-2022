@@ -8,6 +8,8 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/bootstrap.min.css">
+
     <!-- Styles -->
     <style>
 
@@ -16,6 +18,10 @@
             color: #333e48;
             margin: 0;
             width: 100%;
+        }
+        html,
+        body {
+            height: 100%;
         }
 
         .navbar {
@@ -387,119 +393,120 @@
             font-weight: 700;
         }
 
-        .boxes {
-            margin: 2%;
-            height: max-content;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, 28%);
-            grid-column-gap: 6%;
-            grid-row-gap: 6%;
-            grid-auto-flow: dense;
-        }
-
-        .boxes > div {
-            color: white;
-            font-weight: bold;
-            padding: 1%;
-        }
-
-        .wrapper {
-            position: relative;
-            perspective: 40em;
-            display: grid;
-            transform-style: preserve-3d;
+        .mt-100 {
+            margin-top: 100px
         }
 
         .card {
-            grid-area: 1 / 1;
-            height: 200px;
-            width: 98%;
-            transform: translateX(10px) rotateY(25deg) rotateX(10deg);
-            background: #ea1b25;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 1%;
-            color: #000;
-            text-transform: uppercase;
-            font-size: 60px;
-            font-weight: 900;
-            backface-visibility: hidden;
-            box-shadow: 0 10px 25px 5px rgba(0, 0, 0, .1);
+            border-radius: 7px !important;
+            border-color: #e1e7ec
         }
 
-        .card .enclosed {
-            background: #000;
-            line-height: 1;
-            color: whitesmoke;
-            padding: 0 5px;
-            display: inline-block;
-            /*transform: translate(-1px, 1px) scale(0.75);*/
-            transform-origin: right center;
+        .mb-30 {
+            margin-bottom: 30px !important
         }
 
-        .title {
-            font-size: 1.9vw;
+        .card-img-tiles {
+            display: block;
+            border-bottom: 1px solid #e1e7ec
         }
 
-        .price {
-            font-size: 1.5vw;
+        a {
+            color: #000000;
+            text-decoration: none !important
+        }
+        a:hover{
+            color: #ea1b25;
         }
 
-        .desc {
-            font-size: 1vw;
-
+        .card-img-tiles>.inner {
+            display: table;
+            width: 100%
         }
 
-        .card-img {
+        .card-img-tiles .main-img,
+        .card-img-tiles .thumblist {
+            display: table-cell;
             width: 65%;
-            margin: 1%;
+            padding: 15px;
+            vertical-align: middle
         }
 
-        .cart-img {
-            width: 35%;
-            height: 25%;
-            margin: auto;
-
+        .card-img-tiles .main-img>img:last-child,
+        .card-img-tiles .thumblist>img:last-child {
+            margin-bottom: 0
         }
 
-        .wrapper:before {
-            --bw: 9px;
-            grid-area: 1 / 1;
-            content: '';
-            backface-visibility: hidden;
-            height: 100%;
+        .card-img-tiles .main-img>img,
+        .card-img-tiles .thumblist>img {
+            display: block;
             width: 100%;
-            margin-top: calc(-1 * var(--bw));
-            margin-left: calc(-1 * var(--bw));
-            background: transparent;
-            transform: /*translateX(-60px) rotateY(-30deg) rotateX(15deg)*/ scale(1.03);
-            pointer-events: none;
-            border: var(--bw) solid #000;
-            box-sizing: content-box;
+            margin-bottom: 6px
         }
 
-        .wrapper:hover > div,
-        .wrapper:hover:before {
-            transform: none;
+        .thumblist {
+            width: 35%;
+            border-left: 1px solid #e1e7ec !important;
+            display: table-cell;
+            width: 65%;
+            padding: 15px;
+            vertical-align: middle
         }
 
-        .wrapper > div,
-        .wrapper:before {
-            will-change: transform;
-            transition: .3s transform cubic-bezier(.25, .46, .45, 1);
+        .card-img-tiles .thumblist>img {
+            display: block;
+            width: 100%;
+            margin-bottom: 6px
         }
 
-        html,
-        body {
-            height: 100%;
+        .btn-group-sm>.btn,
+        .btn-sm {
+            padding: .45rem .5rem !important;
+            font-size: .875rem;
+            line-height: 1.5;
+            border-radius: .2rem;
+            color: #000000;
+            border-color: #000000;
+        }
+        .btn-sm:hover{
+            background: #ea1b25;
+            border-color: white;
         }
     </style>
-
+    <script>
+        function search(){
+            var search_box = document.getElementById('search-box').value;
+            window.location='/?search='+search_box;
+        }
+    </script>
 </head>
 <!-- header -->
-
-<body class="antialiased">
+<header>
+    <nav class="navbar">
+        <div class="nav">
+            <div class="nav-items">
+                <div class="logo-container">
+                    <a class="brand-logo" href="/">
+                        <img src="img/LOGO.png" class="brand-logo" alt="">
+                    </a>
+                </div>
+                <div class="search">
+                    <button class="search-btn" onclick='search()'>search</button>
+                    <input type="text" id="search-box" class="search-box" placeholder="search product">
+                </div>
+                <div class="icons-container">
+                    <a href="/cart">
+                        <img class="header-profile" src="img/shopping-cart.png" alt="">
+                    </a>
+                    <a href="/profile">
+                        <img class="header-cart" src="img/profile.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<body>
 
 <div>
     @yield('content')
@@ -507,5 +514,54 @@
 
 </body>
 <!-- footer -->
-
+<footer style="background-color:#ea1b25;">
+    <div class="container-footer w-container">
+        <div class="w-row">
+            <div class="footer-column w-clearfix w-col w-col-4">
+                <h3 class="footer-failory-name">ArduStore</h3>
+                <p class="footer-description-failory"><br></p>
+            </div>
+            <div class="footer-column w-col w-col-8">
+                <div class="w-row">
+                    <div class="w-col w-col-8">
+                        <div class="w-row">
+                            <div class="w-col w-col-7 w-col-small-6 w-col-tiny-7">
+                                <h3 class="footer-titles">About</h3>
+                                <p class="footer-links"><a href="" target="_blank"><span
+                                            class="footer-link">Blog<br></span></a><a href=""><span class="footer-link">What's new?!<br></span></a>
+                                </p>
+                            </div>
+                            <div class="w-col w-col-5 w-col-small-6 w-col-tiny-5">
+                                <h3 class="footer-titles">Other</h3>
+                                <p class="footer-links"><a href=""><span
+                                            class="footer-link">Sponsor Us!<br></span></a><a href=""><span
+                                            class="footer-link"></span></a><a href=""><span class="footer-link">Contribute<br></span></a><a
+                                        href=""><span class="footer-link">FAQ</span></a><strong><br></strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column-center-mobile w-col w-col-4">
+                        <h3 class="footer-titles">Follow Us!</h3><a href="" target="_blank"
+                                                                    class="footer-social-network-icons w-inline-block"><img
+                                src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dbf0a2f2b67e3b3ba079c_Twitter%20Icon.svg"
+                                width="20" alt="Twitter icon"></a><a href="" target="_blank"
+                                                                     class="footer-social-network-icons w-inline-block"><img
+                                src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dbfe70fcf5a0514c5b1da_Instagram%20Icon.svg"
+                                width="20" alt="Instagram icon"></a><a href="" target="_blank"
+                                                                       class="footer-social-network-icons w-inline-block"><img
+                                src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dbe42e1e6034fdaba46f6_Facebook%20Icon.svg"
+                                width="20" alt="Facebook Icon"></a><a href="" target="_blank"
+                                                                      class="footer-social-network-icons w-inline-block"><img
+                                src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dc0002f2b676eb4ba0869_LinkedIn%20Icon.svg"
+                                width="20" alt="LinkedIn Icon"></a><a href="" target="_blank"
+                                                                      class="footer-social-network-icons w-inline-block"><img
+                                src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dc0112f2b6739c9ba0871_Pinterest%20Icon.svg"
+                                width="20" alt="Pinterest Icon" class=""></a>
+                        <p class="footer-description">Email us: <a href="mailto:customer@ardustore"><strong
+                                    class="link-email-footer">ArduStore</strong></a><br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</footer>
 </html>
