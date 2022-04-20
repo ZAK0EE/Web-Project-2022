@@ -9,7 +9,7 @@ Route::get('/', function () {
     $search_key = request('search') ?? '';
     $search_data =
         DB::table('products')->where('name', 'like', '%' . $search_key . '%')
-        ->orWhere('description', 'like', '%' . $search_key . '%')->get();
+            ->orWhere('description', 'like', '%' . $search_key . '%')->get();
 
     if (is_null($search_key)) {
         return view('index', [
@@ -23,9 +23,10 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/cart', 'App\Http\Controllers\site\CartController@getCart')->name('checkout.cart');
-Route::get('/cart/item/{id}/remove', 'App\Http\Controllers\site\CartController@removeItem')->name('checkout.cart.remove');
-Route::get('/cart/clear', 'App\Http\Controllers\site\CartController@clearCart')->name('checkout.cart.clear');
+Route::get('/cart', function () {
+//    return view('cart');
+    abort(404);
+});
 
 //authentication with profile page
 Auth::routes();
@@ -53,3 +54,4 @@ Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])-
 
 //for large scall projects controllers effective
 Route::get('/products/{product_id}', [ProductsController::class, 'show']);
+
