@@ -18,8 +18,9 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::middleware('is_admin')->prefix('admin')->group(function () {
     Route::get('home', [AdminController::class, 'adminHome'])->name('admin.home');
-//    Route::get('users', [AdminController::class, 'show_users'])->name('admin.users');
-//    Route::get('orders', [AdminController::class, 'show_orders'])->name('admin.orders');
+    Route::get('order/verify/{order_id}',[AdminController::class, 'orderVerfity'])->name('order.verfity');
+    Route::get('order/cancel/{order_id}',[AdminController::class, 'orderCancel'])->name('order.cancel');
+    Route::get('order/new',[ProductsController::class, 'newOrder'])->name('order.new');
 
 });
 
