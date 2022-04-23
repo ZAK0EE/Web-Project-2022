@@ -27,4 +27,7 @@ class ProductsController
             ]);
         }
     }
+    public function newOrder(){
+        return view('admin.newProduct'); //edit the view `admin/newProduct` make it have a form to create new product
+    }
 }

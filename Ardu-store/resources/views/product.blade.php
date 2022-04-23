@@ -22,7 +22,7 @@
                 <!-- Product Pricing -->
                 <div class="product-price">
                     <span>${{$product->price}}</span>
-                    <a href="../../../../../cart/{{$product->id}}" class="cart-btn">Add to cart</a>
+                    <a href="../../../../../cart/?id={{$product->id}}&quantity=1" class="cart-btn">Add to cart</a>
                 </div>
             </div>
         </div>
