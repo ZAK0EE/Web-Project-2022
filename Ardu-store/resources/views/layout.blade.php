@@ -32,7 +32,7 @@
                     <a href="/cart">
                         <img class="header-profile" src="../../../../../../img/shopping-cart.png" alt="">
                     </a>
-                    <a href="/login">
+                    <a href="/admin/home">
                         <img class="header-cart" src="../../../../../../img/profile.png" alt="">
                     </a>
                 </div>

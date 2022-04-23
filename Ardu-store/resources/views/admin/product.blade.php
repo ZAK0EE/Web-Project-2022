@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('../layout')
 
 @section('content')
     <div class="container mt-30">
@@ -11,7 +11,7 @@
 
             <!-- Right Column -->
             <div class="right-column">
-
+{{'ADMIN'}}
                 <!-- Product Description -->
                 <div class="product-description">
                     <!-- <span>Headphones</span> uncomment this to be used as category -->
@@ -22,7 +22,7 @@
                 <!-- Product Pricing -->
                 <div class="product-price">
                     <span>${{$product->price}}</span>
-                    <a href="../../../../../cart/{{$product->id}}" class="cart-btn">Add to cart</a>
+                    <a href="#" class="cart-btn">Add to cart</a>
                 </div>
             </div>
         </div>

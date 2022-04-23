@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use \Illuminate\Support\Facades\DB;
+use mysql_xdevapi\Exception;
+
 class ProductsController
 {
     public function show($product_id)
@@ -15,8 +17,14 @@ class ProductsController
             abort(404, 'Sorry this product Not Found');
         }
 
-        return view('product', [
-            'product' => $product[0]
-        ]);
+        if (auth()->check() && auth()->user()->is_admin == 1) {
+            return view('admin.product', [
+                'product' => $product[0]
+                ]);
+        }else{
+            return view('product', [
+                'product' => $product[0]
+            ]);
+        }
     }
 }

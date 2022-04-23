@@ -23,6 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        //if user
         return view('home');
     }
+
+
 }
