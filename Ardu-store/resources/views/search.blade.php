@@ -18,8 +18,7 @@
                                 <h4 class="card-title">{{ucfirst($product->name)}}</h4>
                             </a>
                             <h5 class="card-title">{{$product->price}}$</h5>
-                            <h6 class="text-muted">{{$product->description}}</h6>
-                            <a class="btn btn-outline-primary btn-sm" href="/products/product_{{$product->id}}" data-abc="true">View Products</a>
+                            <a class="btn btn-outline-danger btn-sm" href="/products/product_{{$product->id}}" data-abc="true">View Products</a>
                         </div>
                     </div>
                 </div>

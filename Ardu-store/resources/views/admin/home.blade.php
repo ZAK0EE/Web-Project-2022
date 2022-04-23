@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('../layouts.app')
 
 @section('content')
     <div class="container">
@@ -13,7 +13,7 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        <h4>{{ __('You are logged in as `USER`!') }}</h4>
+                        <h4>{{ __('You are logged in as `Admin`!') }}</h4>
 
                             <h6>
                                 {{'name:  '.auth()->user()->name }}
