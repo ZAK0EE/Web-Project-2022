@@ -1,21 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use \Illuminate\Support\Facades\DB;
 class ProductsController
 {
     public function show($product_id)
     {
-        //    return $product_id;
-        //simple lookup database
-        $products = [
-            1 => 'first product',
-            2 => 'second product'
-        ];
-        if (!array_key_exists($product_id, $products)) abort(404, 'Sorry this product Not Found');
+
+        $id = (int) filter_var($product_id, FILTER_SANITIZE_NUMBER_INT); // remove this line if the product id equals the id
+
+        $product = DB::select('select * from products where id = :id',  ['id' => $id]);
+
+        if (is_null($product)) {
+            abort(404, 'Sorry this product Not Found');
+        }
 
         return view('product', [
-            'product' => $products[$product_id]
+            'product' => $product[0]
         ]);
     }
 }

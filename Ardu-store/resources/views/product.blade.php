@@ -1,15 +1,29 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+@extends('layout')
 
-{{$product}}
+@section('content')
 
-</body>
-</html>
+<div class="product-container">
+ 
+    <!-- Left Column / Headphones Image -->
+    <div class="left-column">
+        <img src="{{ URL::to('/img/head.png') }}" alt="" />
+    </div>
+   
+    <!-- Right Column -->
+    <div class="right-column">
+   
+      <!-- Product Description -->
+      <div class="product-description">
+        <!-- <span>Headphones</span> uncomment this to be used as category -->
+        <h1>{{$product->name}}</h1>
+        <p>{{$product->description}}</p>
+      </div>
+
+      <!-- Product Pricing -->
+      <div class="product-price">
+        <span>{{$product->price}}</span>
+        <a href="#" class="cart-btn">Add to cart</a>
+      </div>
+    </div>
+</div>
+@endsection
