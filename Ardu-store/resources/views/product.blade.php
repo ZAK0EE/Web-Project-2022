@@ -21,7 +21,7 @@
 
       <!-- Product Pricing -->
       <div class="product-price">
-        <span>{{$product->price}}</span>
+        <span>${{$product->price}}</span>
         <a href="#" class="cart-btn">Add to cart</a>
       </div>
     </div>
