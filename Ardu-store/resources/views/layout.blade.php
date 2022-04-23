@@ -23,17 +23,17 @@
                     <a class="navbar-brand" href="{{ url('/') }}" style="color: #ea1b25;font-size: 1.75rem;">
                         {{ config('app.name', 'Ardu-store') }}
                     </a>
-                </div> 
+                </div>
                 <div class="search">
                     <button class="search-btn" onclick='search()'>search</button>
                     <input type="text" id="search-box" class="search-box" placeholder="search product">
                 </div>
                 <div class="icons-container">
                     <a href="/cart">
-                        <img class="header-profile" src="img/shopping-cart.png" alt="">
+                        <img class="header-profile" src="../../../../../../img/shopping-cart.png" alt="">
                     </a>
-                    <a href="/profile">
-                        <img class="header-cart" src="img/profile.png" alt="">
+                    <a href="/login">
+                        <img class="header-cart" src="../../../../../../img/profile.png" alt="">
                     </a>
                 </div>
             </div>
