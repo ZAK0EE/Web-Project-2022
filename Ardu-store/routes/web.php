@@ -20,7 +20,7 @@ Route::middleware('is_admin')->prefix('admin')->group(function () {
     Route::get('home', [AdminController::class, 'adminHome'])->name('admin.home');
     Route::get('order/verify/{order_id}',[AdminController::class, 'orderVerfity'])->name('order.verfity');
     Route::get('order/cancel/{order_id}',[AdminController::class, 'orderCancel'])->name('order.cancel');
-    Route::get('order/new',[ProductsController::class, 'newOrder'])->name('order.new');
+    Route::get('product/new',[ProductsController::class, 'newOrder'])->name('order.new');
 
 });
 

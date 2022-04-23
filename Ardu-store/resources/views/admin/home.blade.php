@@ -22,7 +22,7 @@
                         </div>
                         <br>
                         <div>
-                            <a class="btn btn-warning" href="order/new">create new Product</a>
+                            <a class="btn btn-warning" href="product/new">create new Product</a>
                         </div>
                     </div>
                 </div>
