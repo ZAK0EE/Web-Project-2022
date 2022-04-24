@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use \Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+
 use mysql_xdevapi\Exception;
 
 class ProductsController extends Controller
@@ -29,5 +31,17 @@ class ProductsController extends Controller
     }
     public function newOrder(){
         return view('admin.newProduct'); //edit the view `admin/newProduct` make it have a form to create new product
+    }
+
+    public function addProduct(Request $request)
+    {
+        $name = $request->input('Name');
+        $price = $request->input('Price');
+        $image = $request->input('Image');
+        $description = $request->input('Description');
+
+        DB::insert('insert into products (name, price, description, image, created_at) values (?, ?, ?, ?, ?)', [$name, $price, $description, $image, date('Y-m-d H:i:s')]);
+
+        return redirect()->route('order.new');
     }
 }
