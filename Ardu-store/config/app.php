@@ -165,6 +165,11 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
+         * package Service Provider for shopping Cart 
+         */
+        Darryldecode\Cart\CartServiceProvider::class,
+
+        /*
          * Package Service Providers...
          */
 
@@ -191,6 +196,8 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        /* Shipping Cart Package */
+        'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 

@@ -10,7 +10,7 @@
                 <div class="col-md-4 col-sm-6" >
                     <div class="card mb-30"><a class="card-img-tiles" href="/products/{{$product->id}}" data-abc="true">
                             <div class="inner">
-                                <div class="main-img"><img src="https://i.imgur.com/0jO40CF.jpg" alt="product"></div>
+                                <div class="main-img"><img src={{$product->image}} alt="product"></div>
                             </div>
                         </a>
                         <div class="card-body text-center">
