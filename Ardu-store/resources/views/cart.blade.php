@@ -11,7 +11,7 @@
                     @endif
                     <h3 class="CartListWord">Cart List</h3>
                     <div class="CartList">
-                        <table id="cart class="        Carttable" cellspacing="0">
+                        <table id="cart class="          Carttable" cellspacing="0">
                             <thead>
                                 <tr class="Carttable-Header">
                                     <th class="Carttable-Header-img"></th>
@@ -80,8 +80,9 @@
                                             @csrf
                                             <button class="carttable-remove-btn">Remove All Cart</button>
                                         </form>
-                                    <td><a href="#" class="btn btn-success btn-block">Checkout <i
-                                                class="fa fa-angle-right"></i></a></td>
+                                    <td><a href="{{ route('checkout.index') }}"
+                                            class="btn btn-success btn-block">Checkout
+                                            <i class="fa fa-angle-right"></i></a></td>
                                     </td>
                                 </tr>
                             </tfoot>
