@@ -27,10 +27,4 @@ class HomeController extends Controller
         //if user
         return view('home');
     }
-
-    public function ShowOrder()
-    {
-        order::class
-        return view('home');
-    }
 }
