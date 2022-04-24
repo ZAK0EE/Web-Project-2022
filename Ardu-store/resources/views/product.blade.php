@@ -6,7 +6,7 @@
 
             <!-- Left Column / Products Image -->
             <div class="left-column">
-                <img src="{{ $product->image }}" alt="" />
+                <img src='{{$product->image}}' alt="product">
             </div>
 
             <!-- Right Column -->
@@ -34,7 +34,7 @@
                     </form>
                 </div>
 
-                
+
             </div>
         </div>
     </div>

@@ -65,7 +65,7 @@
                                         <td>
                                             {{$order->product_id}}
                                         </td>
-                                        <td>
+                                        <td style="word-wrap: normal">
                                             {{$name}}
                                         </td>
                                         <td>
