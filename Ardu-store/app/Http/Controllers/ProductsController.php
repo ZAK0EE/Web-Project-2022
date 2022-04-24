@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use \Illuminate\Support\Facades\DB;
 use mysql_xdevapi\Exception;
 
-class ProductsController
+class ProductsController extends Controller
 {
     public function show($product_id)
     {
