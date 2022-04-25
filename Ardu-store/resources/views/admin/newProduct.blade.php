@@ -3,11 +3,11 @@
 @section('content')
 
     <div class="container">
-
+        <h1 style="color:rgb(193, 14, 14);font-size:30px">New Product</h1>
             <form action="{{ route('product.add') }}" method="get">
 
                 <label for="name">Name</label>
-                <input class = "form" type="text" id="name" name="Name" placeholder="Product name is..">
+                <input class = "form" type="text" id="name" name="Name"  placeholder="Product name is..">
             
                 <label for="price">Price</label>
                 <input class = "form" type="text" id="price" name="Price" placeholder="Product price is..">

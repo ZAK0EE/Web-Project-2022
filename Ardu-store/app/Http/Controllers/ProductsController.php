@@ -30,7 +30,11 @@ class ProductsController extends Controller
         }
     }
     public function newOrder(){
-        return view('admin.newProduct'); //edit the view `admin/newProduct` make it have a form to create new product
+        return view('admin.newProduct'); 
+    }
+
+    public function editOrder(Request $request){
+        return view('admin.editProduct', ['request' => $request]); 
     }
 
     public function addProduct(Request $request)
@@ -44,4 +48,24 @@ class ProductsController extends Controller
 
         return redirect()->route('order.new');
     }
+
+    public function editProduct(Request $request)
+    {
+        $id = $request->input('Id');
+        $name = $request->input('Name');
+        $price = $request->input('Price');
+        $image = $request->input('Image');
+        $description = $request->input('Description');
+        DB::update('update products set name = ?, price = ?, image = ?, description = ? where id = ?', [$name, $price, $image, $description, $id]);
+
+        return redirect()->route('index');
+    }
+
+    public function deleteProduct(Request $request)
+    {
+        $id = $request->input('id');
+        DB::delete('delete from products where id = ?', [$id]);
+        return redirect()->route('index');
+    }
+    
 }
