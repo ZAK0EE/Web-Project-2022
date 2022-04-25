@@ -13,6 +13,7 @@ use \App\Http\Controllers\AdminController;
 Route::get('/', [SearchController::class, 'show'])->name('index');
 Route::get('/products/{product_id}', [ProductsController::class, 'show']);
 
+
 Auth::routes();
 
 
@@ -23,6 +24,11 @@ Route::middleware('is_admin')->prefix('admin')->group(function () {
     Route::get('order/verify/{order_id}', [AdminController::class, 'orderVerfity'])->name('order.verfity');
     Route::get('order/cancel/{order_id}', [AdminController::class, 'orderCancel'])->name('order.cancel');
     Route::get('product/new', [ProductsController::class, 'newOrder'])->name('order.new');
+    Route::get('product/edit', [ProductsController::class, 'editOrder'])->name('order.edit');
+    Route::get('productadd', [ProductsController::class, 'addProduct'])->name('product.add');
+    Route::get('productedit', [ProductsController::class, 'editProduct'])->name('product.edit');
+    Route::get('productdelete', [ProductsController::class, 'deleteProduct'])->name('product.delete');
+
 });
 
 
