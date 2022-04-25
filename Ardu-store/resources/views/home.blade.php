@@ -15,15 +15,15 @@
                         @endif
                         <h4>{{ __('You are logged in as `USER`!') }}</h4>
 
-                            <h6>
-                                {{'name:  '.auth()->user()->name }}
-                            </h6>
-                            <h6>
-                                {{'E-mail:  '.auth()->user()->email }}
-                            </h6>
-                            <h6>
-                                {{'Created_at:  '.auth()->user()->created_at }}
-                            </h6>
+                        <h6>
+                            {{ 'name:  ' . auth()->user()->name }}
+                        </h6>
+                        <h6>
+                            {{ 'E-mail:  ' . auth()->user()->email }}
+                        </h6>
+                        <h6>
+                            {{ 'Created_at:  ' . auth()->user()->created_at }}
+                        </h6>
 
 
                     </div>

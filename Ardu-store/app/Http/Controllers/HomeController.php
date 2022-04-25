@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -26,6 +27,4 @@ class HomeController extends Controller
         //if user
         return view('home');
     }
-
-
 }

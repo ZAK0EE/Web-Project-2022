@@ -4,7 +4,7 @@
         @if(!$cartItems->first())
             <div class="justify-content-center" style="padding: 10%;margin: auto;text-align: center">
                 <h1>cart is empty</h1>
-            </div>>
+            </div>
         @else
             <div class="row justify-content-center">
                 <!-- left side -->
