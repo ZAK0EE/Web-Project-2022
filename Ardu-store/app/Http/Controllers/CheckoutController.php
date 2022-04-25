@@ -26,7 +26,7 @@ class CheckoutController extends Controller
         // dd($order);
 
         session()->flash('success', 'You made an order!');
-
+        \Cart::clear();
         return redirect()->route('admin.home');
     }
 
