@@ -56,7 +56,7 @@ class ProductsController extends Controller
         $price = $request->input('Price');
         $image = $request->input('Image');
         $description = $request->input('Description');
-        DB::update('update products set name = ?, price = ?, image = ?, description = ? where id = ?', [$name, $price, $image, $description, $id]);
+        DB::update('update products set name = ?, price = ?, image = ?, description = ?, updated_at = ? where id = ?', [$name, $price, $image, $description, date('Y-m-d H:i:s'), $id]);
 
         return redirect()->route('index');
     }
