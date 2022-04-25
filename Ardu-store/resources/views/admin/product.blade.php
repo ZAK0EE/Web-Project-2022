@@ -1,4 +1,4 @@
-@extends('../layout')
+@extends('layout')
 
 @section('content')
     <div class="container mt-30">
@@ -6,12 +6,12 @@
 
             <!-- Left Column / Products Image -->
             <div class="left-column">
-                <img src="{{ $product->image }}" alt="" />
+            <img src='{{$product->image}}' alt="product">
             </div>
 
             <!-- Right Column -->
             <div class="right-column">
-                {{'ADMIN'}}
+            <h3>{{"Admin Page"}}</h3>
                 <!-- Product Description -->
                 <div class="product-description">
                     <!-- <span>Headphones</span> uncomment this to be used as category -->
@@ -35,6 +35,7 @@
 
 
 
+
                 </div>
                 <div class="product-price">
                     <form action="{{ route('order.edit') }}"  method = "GET" enctype="multipart/form-data">
@@ -49,9 +50,7 @@
                         <input type="hidden" value="{{ $product->id }}" name="id">
                         <button class="cart-btn"> Delete</button>
                     </form>
-                 </div>
-
-                
+                 </div>            
             </div>
         </div>
     </div>
