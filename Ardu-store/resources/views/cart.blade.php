@@ -85,7 +85,7 @@
                     <h3> Total ${{ Cart::getTotal() }}</h3>
                     <div>
                         <div>
-                            <a href="#" class="btn btn-primary" style="width: 100%;margin-bottom: 2%">Checkout</a>
+                            <a href="/checkout" class="btn btn-primary" style="width: 100%;margin-bottom: 2%">Checkout</a>
                         </div>
                         <div style="width: 100%;">
                             <form action="{{ route('cart.clear') }}" method="POST">

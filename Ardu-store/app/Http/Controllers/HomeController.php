@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -24,7 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //if user
-        return view('home');
+        $orders = DB::table('orders')->where('user_id',auth()->user()->id)->get();
+        return view('home' ,[
+        'orders' => $orders
+        ]);
     }
 }

@@ -6,12 +6,12 @@
 
             <!-- Left Column / Products Image -->
             <div class="left-column">
-            <img src='{{$product->image}}' alt="product">
+                <img src='{{$product->image}}' alt="product">
             </div>
 
             <!-- Right Column -->
             <div class="right-column">
-            <h3>{{"Admin Page"}}</h3>
+                <h3>{{"Admin Page"}}</h3>
                 <!-- Product Description -->
                 <div class="product-description">
                     <!-- <span>Headphones</span> uncomment this to be used as category -->
@@ -28,29 +28,27 @@
                         <input type="hidden" value="{{ $product->id }}" name="id">
                         <input type="hidden" value="{{ $product->name }}" name="name">
                         <input type="hidden" value="{{ $product->price }}" name="price">
-                        <input type="hidden" value="{{ $product->image }}"  name="image">
+                        <input type="hidden" value="{{ $product->image }}" name="image">
                         <input type="hidden" value="1" name="quantity">
-                        <button class="cart-btn">Add To Cart</button>
+                        <button class="cart-btn mb-2">Add To Cart</button>
                     </form>
-
-
 
 
                 </div>
                 <div class="product-price">
-                    <form action="{{ route('order.edit') }}"  method = "GET" enctype="multipart/form-data">
+                    <form action="{{ route('order.edit') }}" method="GET" enctype="multipart/form-data">
                         <input type="hidden" value="{{ $product->id }}" name="id">
                         <input type="hidden" value="{{ $product->name }}" name="name">
                         <input type="hidden" value="{{ $product->price }}" name="price">
                         <input type="hidden" value="{{ $product->description }}" name="description">
-                        <input type="hidden" value="{{ $product->image }}"  name="image">
-                        <button class="cart-btn"> Edit</button>
+                        <input type="hidden" value="{{ $product->image }}" name="image">
+                        <button class="cart-btn  mr-2"> Edit</button>
                     </form>
-                    <form action="{{ route('product.delete') }}"  method = "GET">
+                    <form action="{{ route('product.delete') }}" method="GET">
                         <input type="hidden" value="{{ $product->id }}" name="id">
                         <button class="cart-btn"> Delete</button>
                     </form>
-                 </div>            
+                </div>
             </div>
         </div>
     </div>

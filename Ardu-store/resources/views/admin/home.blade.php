@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <!-- user details -->
-            <div @if(!is_null($orders))class="col-md-3"@else class="col-md-8"@endif>
+            <div @if(!is_null($orders->first()))class="col-md-2"@else class="col-md-8"@endif>
                 <div class="card">
                     <div class="card-header">{{ __('Dashboard') }}</div>
 
@@ -28,8 +28,8 @@
                 </div>
             </div>
             <!-- orders details -->
-            @if(!is_null($orders))
-                <div class="col-md-9">
+            @if(!is_null($orders->first()))
+                <div class="col-md-10">
                     <div class="card">
                         <div class="card-header">{{ __('Orders') }}</div>
                         <div style="padding:1%;text-align: center;width:100%">
@@ -37,9 +37,9 @@
                                 <tr>
                                     <th>id</th>
                                     <th>user id</th>
-                                    <th>product id</th>
-                                    <th>product name</th>
-                                    <th>quantity</th>
+                                    <th>name</th>
+                                    <th>order number</th>
+                                    <th>no. items</th>
                                     <th>total price</th>
                                     <th>status</th>
                                     <th>created at</th>
@@ -49,12 +49,6 @@
 
                                 </tr>
                                 @foreach($orders as $order)
-                                    @php
-                                        $product=Illuminate\Support\Facades\DB::table('products')->where('id',$order->product_id)->get();
-                                        $name=json_decode($product, true)[0]['name'];
-                                        $price=json_decode($product, true)[0]['price'];
-                                        $total_price=$price*$order->quantity;
-                                    @endphp
                                     <tr>
                                         <td>
                                             {{$order->id}}
@@ -63,16 +57,16 @@
                                             {{$order->user_id}}
                                         </td>
                                         <td>
-                                            {{$order->product_id}}
-                                        </td>
-                                        <td style="word-wrap: normal">
-                                            {{$name}}
+                                            {{$order->first_name}} {{$order->last_name}}
                                         </td>
                                         <td>
-                                            {{$order->quantity}}
+                                            {{$order->order_number}}
                                         </td>
                                         <td>
-                                            {{$total_price}}
+                                            {{$order->item_count}}
+                                        </td>
+                                        <td>
+                                            {{floatval($order->grand_total)}}
                                         </td>
                                         <td>
                                             {{$order->status}}

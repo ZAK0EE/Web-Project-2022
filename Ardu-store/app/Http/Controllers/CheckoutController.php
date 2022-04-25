@@ -27,7 +27,7 @@ class CheckoutController extends Controller
 
         session()->flash('success', 'You made an order!');
 
-        return redirect()->route('home');
+        return redirect()->route('admin.home');
     }
 
     public function storeOrderDetails($params)

@@ -15,10 +15,8 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('product_id')->unsigned()->nullable();
             $table->bigInteger('user_id')->unsigned()->nullable();
-            $table->integer('quantity')->default(1);
-            $table->string('status')->default('processing');
+            $table->string('status')->default('pending');
 
             $table->string('order_number')->unique();
             $table->unsignedInteger('item_count');
@@ -32,8 +30,6 @@ return new class extends Migration
             $table->text('notes')->nullable();
 
             $table->timestamps();
-
-            $table->foreign('product_id')->references('id')->on('products');
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
